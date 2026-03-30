@@ -507,8 +507,8 @@ export function HomePage() {
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 MarketingHubb is Varanasi's premier digital marketing agency.
-                Since 2019, we've helped over 100 businesses transform their
-                online presence and achieve remarkable growth.
+                Since 2024, we've helped businesses transform their online
+                presence and achieve remarkable growth.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
                 Our team of passionate marketers, designers, and strategists
@@ -815,7 +815,7 @@ export function HomePage() {
                 no smoke and mirrors. Every campaign we run is measured, every
                 rupee you invest is accountable, and every report we send tells
                 the full story — wins and learnings alike. We are Varanasi's
-                most trusted name in digital marketing, with 5+ years of proven
+                most trusted name in digital marketing, with 2 years of proven
                 results, and we've built that reputation one honest conversation
                 at a time.
               </p>

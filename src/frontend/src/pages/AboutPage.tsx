@@ -13,10 +13,10 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const team = [
   {
-    name: "Arjun Sharma",
+    name: "Saurabh Chaubey",
     role: "CEO & Founder",
-    image: "/assets/generated/team-arjun.dim_300x300.jpg",
-    bio: "10+ years in digital marketing. Visionary leader who built MarketingHubb from the ground up.",
+    image: "/assets/generated/saurabh-chaubey.jpg",
+    bio: "Founder & CEO of MarketingHubb. Digital marketing expert with 2 years of hands-on experience in SEO, SMM, and paid campaigns. Saurabh founded MarketingHubb in 2024 with a vision to help local businesses in Varanasi grow their digital presence.",
     linkedin: "https://linkedin.com",
   },
   {
@@ -132,10 +132,11 @@ export function AboutPage() {
                 FROM VARANASI TO THE WORLD
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                MarketingHubb was born in 2019 in the ancient city of Varanasi
+                MarketingHubb was born in 2024 in the ancient city of Varanasi
                 with a bold mission: to democratize digital marketing for Indian
-                businesses. What started as a two-person team has grown into a
-                full-service agency of 15+ passionate professionals.
+                businesses. Founded in 2024 by Saurabh Chaubey, MarketingHubb
+                has quickly grown into a results-driven digital marketing
+                agency.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 We saw local businesses struggling to compete in the digital
