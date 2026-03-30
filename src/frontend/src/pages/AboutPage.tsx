@@ -1,39 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import {
-  BarChart2,
-  ChevronRight,
-  Lightbulb,
-  Linkedin,
-  Target,
-} from "lucide-react";
+import { BarChart2, ChevronRight, Lightbulb, Target } from "lucide-react";
 import { useEffect } from "react";
 import { ParticleField } from "../components/ParticleField";
 import { useCountUp } from "../hooks/useCountUp";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-
-const team = [
-  {
-    name: "Saurabh Chaubey",
-    role: "CEO & Founder",
-    image: "/assets/generated/saurabh-chaubey.jpg",
-    bio: "Founder & CEO of MarketingHubb. Digital marketing expert with 2 years of hands-on experience in SEO, SMM, and paid campaigns. Saurabh founded MarketingHubb in 2024 with a vision to help local businesses in Varanasi grow their digital presence.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Priya Singh",
-    role: "Marketing Director",
-    image: "/assets/generated/team-priya.dim_300x300.jpg",
-    bio: "Brand storytelling expert with a passion for data-driven campaigns and creative strategy.",
-    linkedin: "https://linkedin.com",
-  },
-  {
-    name: "Rahul Gupta",
-    role: "SEO Specialist",
-    image: "/assets/generated/team-rahul.dim_300x300.jpg",
-    bio: "Search engine wizard who has helped 50+ businesses rank on page 1 of Google.",
-    linkedin: "https://linkedin.com",
-  },
-];
 
 const values = [
   {
@@ -78,7 +48,6 @@ function StatCard({
 
 export function AboutPage() {
   const storyRef = useScrollReveal();
-  const teamRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const valuesRef = useScrollReveal();
 
@@ -100,7 +69,7 @@ export function AboutPage() {
             ABOUT <span style={{ color: "#43B89A" }}>US</span>
           </h1>
           <p className="text-gray-300 mt-6 text-xl max-w-2xl mx-auto">
-            Varanasi’s most trusted digital marketing agency. Building brands,
+            Varanasi's most trusted digital marketing agency. Building brands,
             driving growth.
           </p>
         </div>
@@ -146,7 +115,7 @@ export function AboutPage() {
                 and Tier-3 cities.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Today, we’re proud to have served 150+ clients across India,
+                Today, we're proud to have served 150+ clients across India,
                 delivering measurable results that translate into real business
                 growth.
               </p>
@@ -166,11 +135,11 @@ export function AboutPage() {
                   },
                   {
                     title: "Our Vision",
-                    text: "To become India’s most trusted digital marketing partner, known for transparency, results, and innovation.",
+                    text: "To become India's most trusted digital marketing partner, known for transparency, results, and innovation.",
                   },
                   {
                     title: "Our Values",
-                    text: "Integrity, excellence, creativity, and an unwavering commitment to our clients’ success.",
+                    text: "Integrity, excellence, creativity, and an unwavering commitment to our clients' success.",
                   },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
@@ -192,98 +161,40 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Stats */}
       <section
         className="py-24"
         style={{
           background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
         }}
-        ref={teamRef}
+        ref={statsRef}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
             <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
-              Our People
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mt-2">
-              THE TEAM BEHIND THE GROWTH
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, i) => (
-              <div
-                key={member.name}
-                className="scroll-reveal bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2"
-                style={{ transitionDelay: `${i * 0.15}s` }}
-                data-ocid={`about.team.card.${i + 1}`}
-              >
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-navy font-black text-xl mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-seagreen-dark font-semibold text-sm uppercase tracking-wide mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                    {member.bio}
-                  </p>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-seagreen-dark text-sm font-semibold hover:text-seagreen transition-colors"
-                    aria-label={`${member.name} LinkedIn`}
-                  >
-                    <Linkedin size={16} /> LinkedIn
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={statsRef}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 scroll-reveal">
-            <span className="text-seagreen-dark text-xs font-bold uppercase tracking-widest">
               By The Numbers
             </span>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase text-navy mt-2">
+            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mt-2">
               WHY CHOOSE US
             </h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <StatCard value={150} suffix="+" label="Happy Clients" />
             <StatCard value={500} suffix="+" label="Campaigns Delivered" />
-            <StatCard value={5} suffix="+" label="Years Experience" />
+            <StatCard value={2} suffix="+" label="Years Experience" />
             <StatCard value={98} suffix="%" label="Client Retention" />
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section
-        className="py-24"
-        style={{
-          background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
-        }}
-        ref={valuesRef}
-      >
+      <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={valuesRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 scroll-reveal">
-            <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
+            <span className="text-seagreen-dark text-xs font-bold uppercase tracking-widest">
               What Drives Us
             </span>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mt-2">
+            <h2 className="text-3xl lg:text-4xl font-black uppercase text-navy mt-2">
               OUR CORE VALUES
             </h2>
           </div>
@@ -292,7 +203,10 @@ export function AboutPage() {
               <div
                 key={v.title}
                 className="scroll-reveal card-gradient rounded-2xl p-8 border border-seagreen/20 service-card text-center"
-                style={{ transitionDelay: `${i * 0.15}s` }}
+                style={{
+                  transitionDelay: `${i * 0.15}s`,
+                  background: "linear-gradient(135deg, #0B2A4A, #071C35)",
+                }}
               >
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
