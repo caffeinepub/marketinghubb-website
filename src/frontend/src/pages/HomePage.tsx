@@ -25,6 +25,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { ParticleField } from "../components/ParticleField";
 import { useCountUp } from "../hooks/useCountUp";
+import { useSEO } from "../hooks/useSEO";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 type HomeServicePath =
@@ -311,6 +312,22 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 }
 
 export function HomePage() {
+  useSEO({
+    title: "Best Digital Marketing Agency in Varanasi | MarketingHubb",
+    description:
+      "MarketingHubb is Varanasi's #1 digital marketing agency. Expert SEO, Social Media Marketing, PPC, Web Design & Content Marketing. Get free consultation. Call +91 73072 60253.",
+    keywords:
+      "best digital marketing agency Varanasi, SEO Varanasi, social media marketing Varanasi, digital marketing company Varanasi, online marketing Varanasi, MarketingHubb",
+    canonical: "https://marketinghubb.in/",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Best Digital Marketing Agency in Varanasi | MarketingHubb",
+      description:
+        "MarketingHubb is Varanasi's leading digital marketing agency offering SEO, SMM, PPC, Web Design and Content Marketing.",
+      url: "https://marketinghubb.in/",
+    },
+  });
   const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useScrollReveal();
   const aboutRef = useScrollReveal();

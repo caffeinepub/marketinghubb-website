@@ -32,15 +32,11 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2" data-ocid="nav.link">
-          <div
-            className="w-9 h-9 rounded-lg flex items-center justify-center font-black text-white text-xl"
-            style={{ background: "linear-gradient(135deg, #43B89A, #36967e)" }}
-          >
-            M
-          </div>
-          <span className="text-white font-bold text-xl tracking-tight">
-            Marketing<span style={{ color: "#43B89A" }}>Hubb</span>
-          </span>
+          <img
+            src="/assets/chatgpt_image_mar_27_2026_09_54_33_am-019d422b-af9e-71ed-a6b3-252fc43015ce.png"
+            alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
+            className="h-10 w-auto"
+          />
         </Link>
 
         {/* Desktop Links */}

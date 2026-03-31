@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -89,6 +90,14 @@ const faqs = [
 ];
 
 export function WebDesignPage() {
+  useSEO({
+    title: "Web Design & Development Services in Varanasi | MarketingHubb",
+    description:
+      "Professional website design and development in Varanasi. MarketingHubb creates fast, mobile-friendly, SEO-optimized websites that convert visitors into customers.",
+    keywords:
+      "web design Varanasi, website development Varanasi, web design company Varanasi, website designer Varanasi, mobile-friendly website Varanasi",
+    canonical: "https://marketinghubb.in/services/web-design",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

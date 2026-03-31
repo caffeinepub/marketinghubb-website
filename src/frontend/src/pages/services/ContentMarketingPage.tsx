@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -89,6 +90,14 @@ const faqs = [
 ];
 
 export function ContentMarketingPage() {
+  useSEO({
+    title: "Content Marketing Services in Varanasi | MarketingHubb",
+    description:
+      "Strategic content marketing services in Varanasi by MarketingHubb. SEO-optimized blogs, articles, and content that attract, engage and convert your target audience.",
+    keywords:
+      "content marketing Varanasi, content marketing services Varanasi, blog writing Varanasi, content strategy Varanasi, content marketing agency Varanasi",
+    canonical: "https://marketinghubb.in/services/content-marketing",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

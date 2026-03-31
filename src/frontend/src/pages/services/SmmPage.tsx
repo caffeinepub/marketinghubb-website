@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -90,6 +91,14 @@ const faqs = [
 ];
 
 export function SmmPage() {
+  useSEO({
+    title: "Social Media Marketing in Varanasi | SMM Services | MarketingHubb",
+    description:
+      "Expert social media marketing (SMM) services in Varanasi. Grow your brand on Facebook, Instagram & LinkedIn. Result-driven social media campaigns by MarketingHubb.",
+    keywords:
+      "social media marketing Varanasi, SMM services Varanasi, Facebook marketing Varanasi, Instagram marketing Varanasi, social media agency Varanasi",
+    canonical: "https://marketinghubb.in/services/smm",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -90,6 +91,14 @@ const faqs = [
 ];
 
 export function EmailMarketingPage() {
+  useSEO({
+    title: "Email Marketing Services in Varanasi | MarketingHubb",
+    description:
+      "Effective email marketing campaigns in Varanasi by MarketingHubb. Build customer relationships, boost retention and drive sales with targeted email marketing strategies.",
+    keywords:
+      "email marketing Varanasi, email marketing services Varanasi, email campaigns Varanasi, email marketing agency Varanasi",
+    canonical: "https://marketinghubb.in/services/email-marketing",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

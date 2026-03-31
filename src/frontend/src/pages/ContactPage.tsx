@@ -2,6 +2,7 @@ import { CheckCircle, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useEffect, useState } from "react";
 import { SiWhatsapp } from "react-icons/si";
 import { ParticleField } from "../components/ParticleField";
+import { useSEO } from "../hooks/useSEO";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const inputStyle = {
@@ -67,6 +68,21 @@ function FormField({
 }
 
 export function ContactPage() {
+  useSEO({
+    title:
+      "Contact MarketingHubb | Digital Marketing Agency Varanasi | +91 73072 60253",
+    description:
+      "Contact MarketingHubb for expert digital marketing services in Varanasi. Call +91 73072 60253 or email saurabhcgoubey200@gmail.com. Located at Mahmoorganj Akashwani, Varanasi.",
+    keywords:
+      "contact MarketingHubb, digital marketing agency contact Varanasi, MarketingHubb phone number, MarketingHubb address Varanasi",
+    canonical: "https://marketinghubb.in/contact",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      name: "Contact MarketingHubb",
+      url: "https://marketinghubb.in/contact",
+    },
+  });
   const formRef = useScrollReveal();
   const [form, setForm] = useState({
     name: "",

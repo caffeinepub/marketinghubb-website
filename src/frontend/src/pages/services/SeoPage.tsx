@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -90,6 +91,15 @@ const faqs = [
 ];
 
 export function SeoPage() {
+  useSEO({
+    title:
+      "SEO Services in Varanasi | Best Search Engine Optimization | MarketingHubb",
+    description:
+      "Professional SEO services in Varanasi by MarketingHubb. Rank higher on Google, drive organic traffic and grow your business. Expert local & national SEO strategies.",
+    keywords:
+      "SEO services Varanasi, search engine optimization Varanasi, local SEO Varanasi, best SEO agency Varanasi, Google ranking Varanasi, SEO company Varanasi",
+    canonical: "https://marketinghubb.in/services/seo",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

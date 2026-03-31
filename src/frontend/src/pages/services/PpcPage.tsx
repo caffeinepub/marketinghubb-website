@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ParticleField } from "../../components/ParticleField";
+import { useSEO } from "../../hooks/useSEO";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
 const benefits = [
@@ -90,6 +91,14 @@ const faqs = [
 ];
 
 export function PpcPage() {
+  useSEO({
+    title: "PPC Advertising Services in Varanasi | Google Ads | MarketingHubb",
+    description:
+      "High-ROI PPC and Google Ads management in Varanasi. MarketingHubb creates targeted pay-per-click campaigns that generate leads and maximize your advertising budget.",
+    keywords:
+      "PPC services Varanasi, Google Ads Varanasi, pay per click advertising Varanasi, Google Ads agency Varanasi, PPC management Varanasi",
+    canonical: "https://marketinghubb.in/services/ppc",
+  });
   const detailsRef = useScrollReveal();
   const benefitsRef = useScrollReveal();
   const faqRef = useScrollReveal();

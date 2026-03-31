@@ -3,6 +3,7 @@ import { BarChart2, ChevronRight, Lightbulb, Target } from "lucide-react";
 import { useEffect } from "react";
 import { ParticleField } from "../components/ParticleField";
 import { useCountUp } from "../hooks/useCountUp";
+import { useSEO } from "../hooks/useSEO";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const values = [
@@ -47,6 +48,23 @@ function StatCard({
 }
 
 export function AboutPage() {
+  useSEO({
+    title:
+      "About MarketingHubb | Digital Marketing Experts in Varanasi Since 2024",
+    description:
+      "Learn about MarketingHubb - founded by Saurabh Chaubey in 2024. We are Varanasi's trusted digital marketing agency with 2+ years of expertise in SEO, SMM, and PPC.",
+    keywords:
+      "about MarketingHubb, Saurabh Chaubey digital marketing, digital marketing agency Varanasi, digital marketing experts Varanasi",
+    canonical: "https://marketinghubb.in/about",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      name: "About MarketingHubb",
+      description:
+        "About MarketingHubb digital marketing agency founded by Saurabh Chaubey in Varanasi in 2024.",
+      url: "https://marketinghubb.in/about",
+    },
+  });
   const storyRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const valuesRef = useScrollReveal();
