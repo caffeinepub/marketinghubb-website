@@ -335,6 +335,7 @@ export function HomePage() {
   const whyRef = useScrollReveal();
   const faqRef = useScrollReveal();
   const seoContentRef = useScrollReveal();
+  const founderRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const [heroVisible, setHeroVisible] = useState(false);
 
@@ -516,7 +517,7 @@ export function HomePage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 bg-[#F4FBFA] confetti-bg">
+      <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={founderRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Founder Photo */}

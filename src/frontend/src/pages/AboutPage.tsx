@@ -68,6 +68,7 @@ export function AboutPage() {
   const storyRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const valuesRef = useScrollReveal();
+  const founderRef = useScrollReveal();
 
   useEffect(() => {
     document.title =
@@ -206,7 +207,7 @@ export function AboutPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-24 bg-[#F4FBFA] confetti-bg">
+      <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={founderRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left: Founder Photo */}
