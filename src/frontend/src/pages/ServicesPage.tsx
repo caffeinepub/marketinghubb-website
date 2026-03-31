@@ -14,7 +14,23 @@ import { useEffect } from "react";
 import { ParticleField } from "../components/ParticleField";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
-const services = [
+type ServicePath =
+  | "/services/seo"
+  | "/services/smm"
+  | "/services/ppc"
+  | "/services/content-marketing"
+  | "/services/web-design"
+  | "/services/email-marketing";
+
+interface ServiceItem {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  features: string[];
+  path: ServicePath;
+}
+
+const services: ServiceItem[] = [
   {
     icon: <Search size={40} className="text-seagreen" />,
     title: "SEO Optimization",
@@ -25,6 +41,7 @@ const services = [
       "Keyword Research & Strategy",
       "Link Building Campaigns",
     ],
+    path: "/services/seo",
   },
   {
     icon: <Share2 size={40} className="text-seagreen" />,
@@ -36,6 +53,7 @@ const services = [
       "Content Creation & Scheduling",
       "Paid Social Campaigns",
     ],
+    path: "/services/smm",
   },
   {
     icon: <TrendingUp size={40} className="text-seagreen" />,
@@ -47,17 +65,19 @@ const services = [
       "Conversion Tracking",
       "A/B Testing & Optimization",
     ],
+    path: "/services/ppc",
   },
   {
     icon: <FileText size={40} className="text-seagreen" />,
     title: "Content Marketing",
     description:
-      "Tell your brand’s story with content that educates, inspires, and converts. From blog posts to video scripts, we create content that establishes authority.",
+      "Tell your brand's story with content that educates, inspires, and converts. From blog posts to video scripts, we create content that establishes authority.",
     features: [
       "Blog & Article Writing",
       "Video Script Creation",
       "Infographics & Visual Content",
     ],
+    path: "/services/content-marketing",
   },
   {
     icon: <Monitor size={40} className="text-seagreen" />,
@@ -69,6 +89,7 @@ const services = [
       "Landing Page Optimization",
       "Mobile-First Development",
     ],
+    path: "/services/web-design",
   },
   {
     icon: <Mail size={40} className="text-seagreen" />,
@@ -80,6 +101,7 @@ const services = [
       "Marketing Automation",
       "Analytics & Reporting",
     ],
+    path: "/services/email-marketing",
   },
 ];
 
@@ -189,13 +211,22 @@ export function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen hover:bg-seagreen-light transition-all mt-auto group-hover:shadow-teal"
-                  data-ocid="services.primary_button"
-                >
-                  Get Started <ArrowRight size={14} />
-                </Link>
+                <div className="flex gap-3 mt-auto">
+                  <Link
+                    to={s.path}
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-seagreen border border-seagreen/50 hover:bg-seagreen/10 transition-all"
+                    data-ocid={`services.learn_more.${i + 1}`}
+                  >
+                    Learn More <ArrowRight size={13} />
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen hover:opacity-90 transition-all group-hover:shadow-teal"
+                    data-ocid={`services.get_started.${i + 1}`}
+                  >
+                    Get Started <ChevronRight size={13} />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -226,7 +257,6 @@ export function ServicesPage() {
                 className="scroll-reveal text-center relative"
                 style={{ transitionDelay: `${i * 0.15}s` }}
               >
-                {/* Connector line */}
                 {i < process.length - 1 && (
                   <div className="hidden lg:block absolute top-10 left-3/4 w-1/2 h-0.5 bg-seagreen/30" />
                 )}
@@ -264,7 +294,7 @@ export function ServicesPage() {
             Ready to Elevate Your Digital Presence?
           </h2>
           <p className="text-navy/70 mb-8 text-lg">
-            Let’s discuss how our Digital Marketing Services in Varanasi can
+            Let's discuss how our Digital Marketing Services in Varanasi can
             drive your business growth.
           </p>
           <Link

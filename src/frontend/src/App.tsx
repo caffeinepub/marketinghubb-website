@@ -12,6 +12,12 @@ import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
 import { ServicesPage } from "./pages/ServicesPage";
+import { ContentMarketingPage } from "./pages/services/ContentMarketingPage";
+import { EmailMarketingPage } from "./pages/services/EmailMarketingPage";
+import { PpcPage } from "./pages/services/PpcPage";
+import { SeoPage } from "./pages/services/SeoPage";
+import { SmmPage } from "./pages/services/SmmPage";
+import { WebDesignPage } from "./pages/services/WebDesignPage";
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -49,12 +55,48 @@ const contactRoute = createRoute({
   path: "/contact",
   component: ContactPage,
 });
+const seoRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/seo",
+  component: SeoPage,
+});
+const smmRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/smm",
+  component: SmmPage,
+});
+const ppcRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/ppc",
+  component: PpcPage,
+});
+const webDesignRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/web-design",
+  component: WebDesignPage,
+});
+const emailMarketingRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/email-marketing",
+  component: EmailMarketingPage,
+});
+const contentMarketingRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/services/content-marketing",
+  component: ContentMarketingPage,
+});
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
   aboutRoute,
   servicesRoute,
   contactRoute,
+  seoRoute,
+  smmRoute,
+  ppcRoute,
+  webDesignRoute,
+  emailMarketingRoute,
+  contentMarketingRoute,
 ]);
 
 const router = createRouter({ routeTree });
