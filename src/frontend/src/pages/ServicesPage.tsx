@@ -193,6 +193,19 @@ export function ServicesPage() {
       {/* Services Grid */}
       <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={servicesRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-seagreen font-semibold uppercase tracking-widest text-sm mb-3">
+              What We Offer
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mb-4">
+              Our Digital Marketing Services
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-base">
+              From SEO to Social Media, PPC to Web Design — we provide
+              end-to-end digital marketing solutions to grow your business in
+              Varanasi and beyond.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((s, i) => (
               <div

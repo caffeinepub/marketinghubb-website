@@ -29,13 +29,14 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2" data-ocid="nav.link">
+        <Link to="/" className="flex items-center" data-ocid="nav.link">
           <img
-            src="/assets/chatgpt_image_mar_27_2026_09_54_33_am-019d422b-af9e-71ed-a6b3-252fc43015ce.png"
+            src="/assets/generated/logo-transparent.png"
             alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
-            className="h-10 w-auto"
+            className="h-16 lg:h-20 w-auto object-contain"
+            style={{ filter: "drop-shadow(0 0 8px rgba(67,184,154,0.3))" }}
           />
         </Link>
 
