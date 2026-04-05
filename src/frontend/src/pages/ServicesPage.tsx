@@ -133,6 +133,29 @@ const process = [
   },
 ];
 
+const industries = [
+  { emoji: "🛒", name: "E-commerce" },
+  { emoji: "🏥", name: "Healthcare" },
+  { emoji: "🏡", name: "Real Estate" },
+  { emoji: "🎓", name: "Education" },
+  { emoji: "🍽️", name: "Restaurant" },
+  { emoji: "🏨", name: "Hotels" },
+  { emoji: "💼", name: "Finance" },
+  { emoji: "⚖️", name: "Legal" },
+  { emoji: "🚗", name: "Automotive" },
+  { emoji: "💄", name: "Fashion" },
+  { emoji: "💊", name: "Pharma" },
+  { emoji: "🏗️", name: "Construction" },
+  { emoji: "📱", name: "Technology" },
+  { emoji: "🎯", name: "Startups" },
+  { emoji: "🛠️", name: "Manufacturing" },
+  { emoji: "✈️", name: "Travel" },
+  { emoji: "🌾", name: "Agriculture" },
+  { emoji: "🏋️", name: "Fitness" },
+  { emoji: "🎭", name: "Entertainment" },
+  { emoji: "🔧", name: "Services" },
+];
+
 export function ServicesPage() {
   useSEO({
     title:
@@ -191,14 +214,15 @@ export function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={servicesRef}>
+      <section className="py-24 bg-[#071C35]" ref={servicesRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-seagreen font-semibold uppercase tracking-widest text-sm mb-3">
               What We Offer
             </p>
             <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mb-4">
-              Our Digital Marketing Services
+              Our Digital Marketing{" "}
+              <span style={{ color: "#43B89A" }}>Services</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-base">
               From SEO to Social Media, PPC to Web Design — we provide
@@ -256,6 +280,57 @@ export function ServicesPage() {
                     Get Started <ChevronRight size={13} />
                   </Link>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== INDUSTRIES SECTION ===== */}
+      <section className="py-24 bg-[#0A1628]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14 scroll-reveal">
+            <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
+              Industries
+            </span>
+            <h2 className="text-3xl lg:text-5xl font-black uppercase text-white mt-2 mb-4 tracking-tight">
+              Driving Results Across{" "}
+              <span style={{ color: "#43B89A" }}>Every Industry</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-base">
+              Our expertise spans{" "}
+              <strong className="text-white">20+ industries</strong> with
+              customized strategies for every business sector.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {industries.map((industry) => (
+              <div
+                key={industry.name}
+                className="group flex flex-col items-center justify-center gap-3 rounded-2xl p-5 cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(67,184,154,0.15)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.background =
+                    "rgba(67,184,154,0.12)";
+                  (e.currentTarget as HTMLDivElement).style.borderColor =
+                    "rgba(67,184,154,0.5)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.background =
+                    "rgba(255,255,255,0.04)";
+                  (e.currentTarget as HTMLDivElement).style.borderColor =
+                    "rgba(67,184,154,0.15)";
+                }}
+              >
+                <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                  {industry.emoji}
+                </span>
+                <span className="text-white text-sm font-semibold text-center leading-tight">
+                  {industry.name}
+                </span>
               </div>
             ))}
           </div>
