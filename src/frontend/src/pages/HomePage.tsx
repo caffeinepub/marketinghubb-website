@@ -337,6 +337,7 @@ export function HomePage() {
   const seoContentRef = useScrollReveal();
   const founderRef = useScrollReveal();
   const ctaRef = useScrollReveal();
+  const locationsRef = useScrollReveal();
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
@@ -1165,6 +1166,7 @@ export function HomePage() {
         style={{
           background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
         }}
+        ref={locationsRef}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14 scroll-reveal">

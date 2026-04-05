@@ -189,7 +189,10 @@ export function ServicesPage() {
           <p className="text-seagreen text-xs font-bold uppercase tracking-widest mb-4">
             Home / Services
           </p>
-          <h1 className="text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
+          <h1
+            className="text-5xl lg:text-7xl font-black uppercase leading-tight"
+            style={{ color: "#ffffff" }}
+          >
             OUR <span style={{ color: "#43B89A" }}>SERVICES</span>
           </h1>
           <p className="text-gray-300 mt-6 text-xl max-w-2xl mx-auto">
@@ -216,11 +219,18 @@ export function ServicesPage() {
       {/* Services Grid */}
       <section className="py-24 bg-[#071C35]" ref={servicesRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Heading — NO scroll-reveal so it's always visible */}
           <div className="text-center mb-16">
-            <p className="text-seagreen font-semibold uppercase tracking-widest text-sm mb-3">
+            <p
+              className="font-semibold uppercase tracking-widest text-sm mb-3"
+              style={{ color: "#43B89A" }}
+            >
               What We Offer
             </p>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mb-4">
+            <h2
+              className="text-3xl lg:text-4xl font-black uppercase mb-4"
+              style={{ color: "#ffffff" }}
+            >
               Our Digital Marketing{" "}
               <span style={{ color: "#43B89A" }}>Services</span>
             </h2>
@@ -244,7 +254,10 @@ export function ServicesPage() {
                 >
                   {s.icon}
                 </div>
-                <h3 className="text-white font-black text-xl uppercase mb-3">
+                <h3
+                  className="font-black text-xl uppercase mb-3"
+                  style={{ color: "#ffffff" }}
+                >
                   {s.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed mb-5 flex-1">
@@ -289,17 +302,24 @@ export function ServicesPage() {
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className="py-24 bg-[#0A1628]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14 scroll-reveal">
-            <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
+          {/* Heading — no scroll-reveal so always visible */}
+          <div className="text-center mb-14">
+            <span
+              className="text-xs font-bold uppercase tracking-widest"
+              style={{ color: "#43B89A" }}
+            >
               Industries
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black uppercase text-white mt-2 mb-4 tracking-tight">
+            <h2
+              className="text-3xl lg:text-5xl font-black uppercase mt-2 mb-4 tracking-tight"
+              style={{ color: "#ffffff" }}
+            >
               Driving Results Across{" "}
               <span style={{ color: "#43B89A" }}>Every Industry</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-base">
               Our expertise spans{" "}
-              <strong className="text-white">20+ industries</strong> with
+              <strong style={{ color: "#ffffff" }}>20+ industries</strong> with
               customized strategies for every business sector.
             </p>
           </div>
@@ -328,7 +348,10 @@ export function ServicesPage() {
                 <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
                   {industry.emoji}
                 </span>
-                <span className="text-white text-sm font-semibold text-center leading-tight">
+                <span
+                  className="text-sm font-semibold text-center leading-tight"
+                  style={{ color: "#ffffff" }}
+                >
                   {industry.name}
                 </span>
               </div>
@@ -476,7 +499,10 @@ export function ServicesPage() {
             <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
               How We Work
             </span>
-            <h2 className="text-3xl lg:text-4xl font-black uppercase text-white mt-2">
+            <h2
+              className="text-3xl lg:text-4xl font-black uppercase mt-2"
+              style={{ color: "#ffffff" }}
+            >
               OUR PROCESS
             </h2>
           </div>
@@ -499,7 +525,10 @@ export function ServicesPage() {
                 >
                   {step.step}
                 </div>
-                <h3 className="text-white font-black text-lg uppercase mb-3">
+                <h3
+                  className="font-black text-lg uppercase mb-3"
+                  style={{ color: "#ffffff" }}
+                >
                   {step.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
