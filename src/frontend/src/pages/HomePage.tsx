@@ -338,6 +338,7 @@ export function HomePage() {
   const founderRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const locationsRef = useScrollReveal();
+  const industriesRef = useScrollReveal();
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
@@ -1017,7 +1018,10 @@ export function HomePage() {
 
       {/* ===== INDUSTRIES SECTION ===== */}
       <section className="py-24 bg-[#0A1628]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          ref={industriesRef}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <div className="text-center mb-14 scroll-reveal">
             <span className="text-seagreen-dark text-xs font-bold uppercase tracking-widest">
               Industries
