@@ -658,7 +658,7 @@ export function HomePage() {
             <div className="scroll-reveal-left">
               <div className="grid grid-cols-2 gap-8">
                 <StatCard value={100} suffix="+" label="Happy Clients" />
-                <StatCard value={5} suffix="+" label="Years Experience" />
+                <StatCard value={2} suffix="+" label="Years Experience" />
                 <StatCard value={500} suffix="+" label="Campaigns" />
                 <StatCard value={98} suffix="%" label="Satisfaction Rate" />
               </div>
@@ -806,7 +806,7 @@ export function HomePage() {
           <div className="scroll-reveal grid grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
             {[
               { val: "100+", label: "Brands Grown" },
-              { val: "5+", label: "Years of Expertise" },
+              { val: "2+", label: "Years of Expertise" },
               { val: "500+", label: "Campaigns Delivered" },
               { val: "98%", label: "Client Satisfaction" },
             ].map((stat) => (
