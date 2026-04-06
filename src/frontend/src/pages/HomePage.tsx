@@ -336,9 +336,9 @@ export function HomePage() {
   const faqRef = useScrollReveal();
   const seoContentRef = useScrollReveal();
   const founderRef = useScrollReveal();
-  const ctaRef = useScrollReveal();
   const locationsRef = useScrollReveal();
   const industriesRef = useScrollReveal();
+  const testimonialsRef = useScrollReveal();
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
@@ -1324,6 +1324,340 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* ===== CLIENT TESTIMONIALS SECTION ===== */}
+      <div className="scroll-reveal" ref={testimonialsRef}>
+        <section
+          className="py-20 relative overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
+          }}
+        >
+          {/* Subtle bg glow */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-10"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse at 50% 0%, #43B89A 0%, transparent 70%)",
+            }}
+          />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {/* Heading */}
+            <div className="text-center mb-14 scroll-reveal">
+              <span
+                className="inline-block px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4"
+                style={{
+                  background: "rgba(67,184,154,0.15)",
+                  color: "#43B89A",
+                  border: "1px solid rgba(67,184,154,0.3)",
+                }}
+              >
+                Client Testimonials
+              </span>
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">
+                What Our Clients Say
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                Real results from real businesses across Varanasi and beyond
+              </p>
+            </div>
+          </div>
+
+          {/* Marquee Row 1 — scroll left */}
+          <div
+            className="marquee-track overflow-hidden mb-6"
+            data-ocid="testimonials.panel"
+          >
+            <div
+              className="animate-marquee-left flex gap-5"
+              style={{ width: "max-content" }}
+            >
+              {[
+                {
+                  name: "Rajesh Gupta",
+                  role: "Shop Owner",
+                  city: "Varanasi",
+                  initials: "RG",
+                  color: "#2563eb",
+                  review:
+                    "MarketingHubb ne hamare jewellery shop ki online visibility completely transform kar di. Google par top 3 mein aana shuru ho gaye pehle 3 mahine mein hi. Saurabh bhai ka kaam bahut professional hai.",
+                },
+                {
+                  name: "Priya Singh",
+                  role: "Restaurant Owner",
+                  city: "Allahabad",
+                  initials: "PS",
+                  color: "#7c3aed",
+                  review:
+                    "Social media marketing se hamari restaurant mein weekend bookings 3x ho gayi. Instagram par itni engagement pehle kabhi nahi thi. Genuinely impressed!",
+                },
+                {
+                  name: "Mohit Verma",
+                  role: "Real Estate Agent",
+                  city: "Lucknow",
+                  initials: "MV",
+                  color: "#059669",
+                  review:
+                    "Google Ads campaign se quality leads milne lage — time waste karne wale nahi, serious buyers. ROI bahut achha raha. Highly recommend karta hoon.",
+                },
+                {
+                  name: "Sunita Yadav",
+                  role: "Boutique Owner",
+                  city: "Varanasi",
+                  initials: "SY",
+                  color: "#d97706",
+                  review:
+                    "Website design bahut sundar bani aur SEO bhi sahi se kiya. Ab Varanasi mein boutique dhundhnne waale customers seedha mere paas aate hain. Bohot achha experience raha.",
+                },
+                {
+                  name: "Arjun Mishra",
+                  role: "Education Institute",
+                  city: "Gorakhpur",
+                  initials: "AM",
+                  color: "#dc2626",
+                  review:
+                    "Admissions 40% badh gaaye is saal sirf digital marketing se. Facebook aur Instagram ads targeting ekdum sahi thi. MarketingHubb team genuinely dedicated hai.",
+                },
+              ]
+                .concat([
+                  {
+                    name: "Rajesh Gupta",
+                    role: "Shop Owner",
+                    city: "Varanasi",
+                    initials: "RG",
+                    color: "#2563eb",
+                    review:
+                      "MarketingHubb ne hamare jewellery shop ki online visibility completely transform kar di. Google par top 3 mein aana shuru ho gaye pehle 3 mahine mein hi. Saurabh bhai ka kaam bahut professional hai.",
+                  },
+                  {
+                    name: "Priya Singh",
+                    role: "Restaurant Owner",
+                    city: "Allahabad",
+                    initials: "PS",
+                    color: "#7c3aed",
+                    review:
+                      "Social media marketing se hamari restaurant mein weekend bookings 3x ho gayi. Instagram par itni engagement pehle kabhi nahi thi. Genuinely impressed!",
+                  },
+                  {
+                    name: "Mohit Verma",
+                    role: "Real Estate Agent",
+                    city: "Lucknow",
+                    initials: "MV",
+                    color: "#059669",
+                    review:
+                      "Google Ads campaign se quality leads milne lage — time waste karne wale nahi, serious buyers. ROI bahut achha raha. Highly recommend karta hoon.",
+                  },
+                  {
+                    name: "Sunita Yadav",
+                    role: "Boutique Owner",
+                    city: "Varanasi",
+                    initials: "SY",
+                    color: "#d97706",
+                    review:
+                      "Website design bahut sundar bani aur SEO bhi sahi se kiya. Ab Varanasi mein boutique dhundhnne waale customers seedha mere paas aate hain. Bohot achha experience raha.",
+                  },
+                  {
+                    name: "Arjun Mishra",
+                    role: "Education Institute",
+                    city: "Gorakhpur",
+                    initials: "AM",
+                    color: "#dc2626",
+                    review:
+                      "Admissions 40% badh gaaye is saal sirf digital marketing se. Facebook aur Instagram ads targeting ekdum sahi thi. MarketingHubb team genuinely dedicated hai.",
+                  },
+                ])
+                .map((t, i) => (
+                  <div
+                    key={`row-${i}-${t.name}`}
+                    className="shrink-0 rounded-2xl p-6"
+                    style={{
+                      minWidth: "310px",
+                      maxWidth: "340px",
+                      background: "rgba(255,255,255,0.05)",
+                      border: "1px solid rgba(67,184,154,0.2)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                    data-ocid={`testimonials.item.${(i % 5) + 1}`}
+                  >
+                    <div className="flex gap-1 mb-3">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <span key={s} className="text-yellow-400 text-base">
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-5 italic">
+                      "{t.review}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0"
+                        style={{ background: t.color }}
+                      >
+                        {t.initials}
+                      </div>
+                      <div>
+                        <p className="text-white font-bold text-sm leading-tight">
+                          {t.name}
+                        </p>
+                        <p className="text-xs" style={{ color: "#43B89A" }}>
+                          {t.role} · {t.city}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+
+          {/* Marquee Row 2 — scroll right */}
+          <div
+            className="marquee-track overflow-hidden"
+            data-ocid="testimonials.list"
+          >
+            <div
+              className="animate-marquee-right flex gap-5"
+              style={{ width: "max-content" }}
+            >
+              {[
+                {
+                  name: "Deepak Tiwari",
+                  role: "Pharma Distributor",
+                  city: "Kanpur",
+                  initials: "DT",
+                  color: "#0891b2",
+                  review:
+                    "SEO aur content marketing se organic traffic double ho gaya 4 mahine mein. Competitors se aage nikal gaye search results mein. Bahut achha kaam hai.",
+                },
+                {
+                  name: "Kavita Sharma",
+                  role: "Travel Agency",
+                  city: "Varanasi",
+                  initials: "KS",
+                  color: "#9333ea",
+                  review:
+                    "International tourist inquiries aane lagi website se. Content strategy aur local SEO ne sach mein kaam kiya. Saurabh ji ka commitment level outstanding hai.",
+                },
+                {
+                  name: "Rahul Pandey",
+                  role: "IT Services",
+                  city: "Noida",
+                  initials: "RP",
+                  color: "#16a34a",
+                  review:
+                    "Professional approach, transparent reporting, aur actual results — yahi teen cheezein mujhe MarketingHubb mein best lagti hain. Monthly reports bahut detailed hote hain.",
+                },
+                {
+                  name: "Anita Dubey",
+                  role: "Beauty Parlour",
+                  city: "Varanasi",
+                  initials: "AD",
+                  color: "#e11d48",
+                  review:
+                    "Google My Business optimization ke baad walk-in customers bahut badh gaye. Local SEO ka effect sirf 2 mahine mein dikh gaya. Mera full support hai in logon ko.",
+                },
+                {
+                  name: "Vikas Srivastava",
+                  role: "Hardware Business",
+                  city: "Jaunpur",
+                  initials: "VS",
+                  color: "#b45309",
+                  review:
+                    "Pehle online presence zero thi, ab WhatsApp pe daily inquiries aati hain. Social media aur Google Ads ka combination perfect raha. 100% satisfied hoon.",
+                },
+              ]
+                .concat([
+                  {
+                    name: "Deepak Tiwari",
+                    role: "Pharma Distributor",
+                    city: "Kanpur",
+                    initials: "DT",
+                    color: "#0891b2",
+                    review:
+                      "SEO aur content marketing se organic traffic double ho gaya 4 mahine mein. Competitors se aage nikal gaye search results mein. Bahut achha kaam hai.",
+                  },
+                  {
+                    name: "Kavita Sharma",
+                    role: "Travel Agency",
+                    city: "Varanasi",
+                    initials: "KS",
+                    color: "#9333ea",
+                    review:
+                      "International tourist inquiries aane lagi website se. Content strategy aur local SEO ne sach mein kaam kiya. Saurabh ji ka commitment level outstanding hai.",
+                  },
+                  {
+                    name: "Rahul Pandey",
+                    role: "IT Services",
+                    city: "Noida",
+                    initials: "RP",
+                    color: "#16a34a",
+                    review:
+                      "Professional approach, transparent reporting, aur actual results — yahi teen cheezein mujhe MarketingHubb mein best lagti hain. Monthly reports bahut detailed hote hain.",
+                  },
+                  {
+                    name: "Anita Dubey",
+                    role: "Beauty Parlour",
+                    city: "Varanasi",
+                    initials: "AD",
+                    color: "#e11d48",
+                    review:
+                      "Google My Business optimization ke baad walk-in customers bahut badh gaye. Local SEO ka effect sirf 2 mahine mein dikh gaya. Mera full support hai in logon ko.",
+                  },
+                  {
+                    name: "Vikas Srivastava",
+                    role: "Hardware Business",
+                    city: "Jaunpur",
+                    initials: "VS",
+                    color: "#b45309",
+                    review:
+                      "Pehle online presence zero thi, ab WhatsApp pe daily inquiries aati hain. Social media aur Google Ads ka combination perfect raha. 100% satisfied hoon.",
+                  },
+                ])
+                .map((t, i) => (
+                  <div
+                    key={`row-${i}-${t.name}`}
+                    className="shrink-0 rounded-2xl p-6"
+                    style={{
+                      minWidth: "310px",
+                      maxWidth: "340px",
+                      background: "rgba(255,255,255,0.05)",
+                      border: "1px solid rgba(67,184,154,0.2)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                    data-ocid={`testimonials.item.${(i % 5) + 1}`}
+                  >
+                    <div className="flex gap-1 mb-3">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <span key={s} className="text-yellow-400 text-base">
+                          ★
+                        </span>
+                      ))}
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed mb-5 italic">
+                      "{t.review}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-white font-black text-sm shrink-0"
+                        style={{ background: t.color }}
+                      >
+                        {t.initials}
+                      </div>
+                      <div>
+                        <p className="text-white font-bold text-sm leading-tight">
+                          {t.name}
+                        </p>
+                        <p className="text-xs" style={{ color: "#43B89A" }}>
+                          {t.role} · {t.city}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
       {/* ===== FAQ SECTION ===== */}
       <section
         className="py-28 relative overflow-hidden"
@@ -2129,55 +2463,6 @@ export function HomePage() {
               Instagram Marketing Varanasi | Facebook Ads Varanasi | Mahmoorganj
               Akashwani Varanasi 221010
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section
-        className="py-24 relative overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(135deg, #36967e 0%, #43B89A 50%, #5CC7AE 100%)",
-        }}
-        ref={ctaRef}
-      >
-        <ParticleField count={10} />
-        <div className="max-w-4xl mx-auto px-4 text-center relative scroll-reveal">
-          <div className="w-16 h-1 bg-white/40 mx-auto mb-8 rounded-full" />
-          <h2 className="text-3xl lg:text-5xl font-black uppercase text-navy mb-6 leading-tight">
-            Ready to Grow Your Business?
-          </h2>
-          <p className="text-navy/70 text-lg mb-10 max-w-2xl mx-auto">
-            Join 100+ businesses that trust MarketingHubb for their digital
-            marketing success. Let's create your growth story together.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="px-8 py-4 rounded-full font-black text-seagreen bg-navy uppercase tracking-wide hover:scale-105 transition-all shadow-xl"
-              data-ocid="home.primary_button"
-            >
-              Contact Us Today
-            </Link>
-            <a
-              href="https://wa.me/917307260253"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full font-bold text-navy border-2 border-navy uppercase tracking-wide hover:bg-navy hover:text-seagreen transition-all"
-              data-ocid="home.button"
-            >
-              WhatsApp Us
-            </a>
-          </div>
-          <div className="mt-10 flex items-center justify-center gap-6 text-navy/60 text-sm">
-            <span className="flex items-center gap-1">
-              <Star size={14} className="text-navy" /> 5-Star Rated
-            </span>
-            <span>•</span>
-            <span>100% Transparent</span>
-            <span>•</span>
-            <span>No Long-Term Contracts</span>
           </div>
         </div>
       </section>

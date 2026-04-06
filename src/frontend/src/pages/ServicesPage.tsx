@@ -174,7 +174,7 @@ export function ServicesPage() {
   });
   const servicesRef = useScrollReveal();
   const processRef = useScrollReveal();
-  const ctaRef = useScrollReveal();
+  const locationsRef = useScrollReveal();
 
   useEffect(() => {
     document.title = "Digital Marketing Services Varanasi | MarketingHubb";
@@ -360,6 +360,166 @@ export function ServicesPage() {
         </div>
       </section>
 
+      {/* ===== LOCATIONS SECTION ===== */}
+      <section
+        className="py-24"
+        style={{
+          background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
+        }}
+        ref={locationsRef}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14 scroll-reveal">
+            <span className="text-seagreen text-xs font-bold uppercase tracking-widest">
+              Our Locations
+            </span>
+            <h2 className="text-3xl lg:text-5xl font-black uppercase text-white mt-2 mb-4 tracking-tight">
+              We Serve <span style={{ color: "#43B89A" }}>28 Cities</span>{" "}
+              Across India
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-base">
+              From metro cities to tier-2 towns — MarketingHubb delivers{" "}
+              <strong className="text-white">
+                world-class digital marketing
+              </strong>{" "}
+              everywhere in India.
+            </p>
+          </div>
+
+          {/* Uttar Pradesh */}
+          <div className="mb-10 scroll-reveal">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-2xl">🏛️</span>
+              <h3
+                className="text-xl font-black uppercase tracking-widest"
+                style={{ color: "#43B89A" }}
+              >
+                Uttar Pradesh
+              </h3>
+              <div
+                className="flex-1 h-px"
+                style={{ background: "rgba(67,184,154,0.3)" }}
+              />
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {[
+                { emoji: "🕌", name: "Varanasi" },
+                { emoji: "🏙️", name: "Lucknow" },
+                { emoji: "🏯", name: "Agra" },
+                { emoji: "🏭", name: "Kanpur" },
+                { emoji: "🌊", name: "Prayagraj" },
+                { emoji: "🚀", name: "Ghaziabad" },
+                { emoji: "💻", name: "Noida" },
+                { emoji: "🌆", name: "Greater Noida" },
+                { emoji: "⚔️", name: "Meerut" },
+                { emoji: "🎓", name: "Aligarh" },
+                { emoji: "🏪", name: "Moradabad" },
+                { emoji: "🌿", name: "Bareilly" },
+                { emoji: "🐘", name: "Gorakhpur" },
+                { emoji: "🪶", name: "Mathura" },
+                { emoji: "🌸", name: "Vrindavan" },
+                { emoji: "✨", name: "Ayodhya" },
+                { emoji: "⚒️", name: "Jhansi" },
+                { emoji: "🌲", name: "Saharanpur" },
+                { emoji: "🏗️", name: "Muzaffarnagar" },
+                { emoji: "💎", name: "Firozabad" },
+                { emoji: "🌾", name: "Hapur" },
+                { emoji: "📚", name: "Rampur" },
+                { emoji: "🌺", name: "Shahjahanpur" },
+                { emoji: "🎋", name: "Jaunpur" },
+                { emoji: "🌻", name: "Azamgarh" },
+                { emoji: "⛰️", name: "Mirzapur" },
+                { emoji: "🧵", name: "Bhadohi" },
+              ].map((city) => (
+                <div
+                  key={city.name}
+                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(67,184,154,0.15)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.background =
+                      "rgba(67,184,154,0.15)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor =
+                      "rgba(67,184,154,0.5)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.background =
+                      "rgba(255,255,255,0.05)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor =
+                      "rgba(67,184,154,0.15)";
+                  }}
+                >
+                  <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                    {city.emoji}
+                  </span>
+                  <span className="text-white text-xs font-semibold leading-tight">
+                    {city.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Other States */}
+          <div className="scroll-reveal">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="text-2xl">🇮🇳</span>
+              <h3
+                className="text-xl font-black uppercase tracking-widest"
+                style={{ color: "#43B89A" }}
+              >
+                Other States
+              </h3>
+              <div
+                className="flex-1 h-px"
+                style={{ background: "rgba(67,184,154,0.3)" }}
+              />
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3">
+              {[
+                { emoji: "🏛️", name: "Delhi NCR" },
+                { emoji: "🌆", name: "Maharashtra" },
+                { emoji: "🏰", name: "Rajasthan" },
+                { emoji: "💰", name: "Gujarat" },
+                { emoji: "💻", name: "Karnataka" },
+                { emoji: "🎭", name: "Tamil Nadu" },
+                { emoji: "🌴", name: "Kerala" },
+              ].map((state) => (
+                <div
+                  key={state.name}
+                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  style={{
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(67,184,154,0.15)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.background =
+                      "rgba(67,184,154,0.15)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor =
+                      "rgba(67,184,154,0.5)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLDivElement).style.background =
+                      "rgba(255,255,255,0.05)";
+                    (e.currentTarget as HTMLDivElement).style.borderColor =
+                      "rgba(67,184,154,0.15)";
+                  }}
+                >
+                  <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                    {state.emoji}
+                  </span>
+                  <span className="text-white text-xs font-semibold leading-tight">
+                    {state.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process */}
       <section
         className="py-24"
@@ -411,32 +571,6 @@ export function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section
-        className="py-20 relative overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #36967e 0%, #43B89A 100%)",
-        }}
-        ref={ctaRef}
-      >
-        <div className="max-w-4xl mx-auto px-4 text-center relative scroll-reveal">
-          <h2 className="text-3xl lg:text-4xl font-black uppercase text-navy mb-4">
-            Ready to Elevate Your Digital Presence?
-          </h2>
-          <p className="text-navy/70 mb-8 text-lg">
-            Let's discuss how our Digital Marketing Services in Varanasi can
-            drive your business growth.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-seagreen bg-navy uppercase tracking-wide hover:scale-105 transition-all shadow-xl"
-            data-ocid="services.primary_button"
-          >
-            Get A Free Consultation <ChevronRight size={18} />
-          </Link>
         </div>
       </section>
     </div>

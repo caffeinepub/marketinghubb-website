@@ -33,10 +33,13 @@ export function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center" data-ocid="nav.link">
           <img
-            src="/assets/generated/logo-transparent.png"
+            src="/assets/chatgpt_image_mar_27_2026_09_54_33_am-019d6108-ca1d-752d-9b80-927f2099a261.png"
             alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
-            className="h-16 lg:h-20 w-auto object-contain"
-            style={{ filter: "drop-shadow(0 0 8px rgba(67,184,154,0.3))" }}
+            className="h-20 lg:h-24 w-auto object-contain"
+            style={{
+              filter:
+                "brightness(1.15) drop-shadow(0 0 10px rgba(67,184,154,0.5))",
+            }}
           />
         </Link>
 

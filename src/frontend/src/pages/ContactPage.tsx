@@ -377,40 +377,6 @@ export function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Map Placeholder */}
-      <section>
-        <div
-          className="w-full h-72 relative overflow-hidden flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(135deg, #071C35 0%, #0B2A4A 60%, #0d3555 100%)",
-          }}
-          data-ocid="contact.section"
-        >
-          <ParticleField count={20} />
-          <div className="relative text-center">
-            <MapPin
-              size={48}
-              className="text-seagreen mx-auto mb-4 animate-float"
-            />
-            <h3 className="text-white font-black text-2xl uppercase mb-2">
-              Find Us in Varanasi
-            </h3>
-            <p className="text-gray-400">
-              Mahmoorganj Akashwani, Varanasi 221010
-            </p>
-            <a
-              href="https://maps.google.com/?q=Mahmoorganj+Akashwani,Varanasi+221010"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-6 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen hover:bg-seagreen-light transition-all"
-            >
-              Open in Google Maps
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

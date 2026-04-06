@@ -6,6 +6,7 @@ import {
   createRouter,
 } from "@tanstack/react-router";
 import { FloatingButtons } from "./components/FloatingButtons";
+import { FloatingLeadForm } from "./components/FloatingLeadForm";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
 import { AboutPage } from "./pages/AboutPage";
@@ -31,6 +32,7 @@ const rootRoute = createRootRoute({
       </main>
       <Footer />
       <FloatingButtons />
+      <FloatingLeadForm />
     </div>
   ),
 });
