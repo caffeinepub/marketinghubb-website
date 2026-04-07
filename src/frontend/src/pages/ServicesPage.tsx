@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   CheckCircle,
+  ChevronDown,
   ChevronRight,
   FileText,
   Mail,
@@ -10,7 +11,7 @@ import {
   Share2,
   TrendingUp,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ParticleField } from "../components/ParticleField";
 import { useSEO } from "../hooks/useSEO";
 import { useScrollReveal } from "../hooks/useScrollReveal";
@@ -155,6 +156,152 @@ const industries = [
   { emoji: "🎭", name: "Entertainment" },
   { emoji: "🔧", name: "Services" },
 ];
+
+const faqsLeft = [
+  {
+    q: "What is digital marketing and why does my business need it?",
+    a: "Digital marketing uses online channels like Google, social media, and email to promote your business. In today's digital world, your customers are online — and digital marketing helps you reach them exactly when they're searching for your services, driving more leads and sales at a lower cost than traditional advertising.",
+  },
+  {
+    q: "How long does it take to see results from SEO?",
+    a: "SEO is a long-term strategy. You can expect to see initial improvements in rankings and traffic within 3–6 months. Significant, sustainable results typically take 6–12 months depending on your industry competition and the current state of your website.",
+  },
+  {
+    q: "What makes MarketingHubb different from other digital marketing agencies in Varanasi?",
+    a: "We are a local Varanasi-based agency with deep understanding of the local market, customer behavior, and regional competition. We offer transparent reporting, no long-term contracts, and customized strategies — not one-size-fits-all packages.",
+  },
+  {
+    q: "How much does digital marketing cost?",
+    a: "Our pricing is flexible and tailored to your goals and budget. We offer plans starting from affordable monthly packages for small businesses to comprehensive enterprise solutions. Contact us for a free consultation and custom quote.",
+  },
+  {
+    q: "Can you help my business rank on Google Maps and local search?",
+    a: "Yes! Local SEO is one of our specialties. We optimize your Google Business Profile, build local citations, and implement geo-targeted strategies to help your business appear prominently in Varanasi and nearby location searches.",
+  },
+  {
+    q: "Do you offer social media marketing services?",
+    a: "Absolutely. We manage Instagram, Facebook, LinkedIn, and YouTube for businesses of all sizes. Our SMM services include content creation, scheduling, community management, and paid social media campaigns to grow your audience and engagement.",
+  },
+];
+
+const faqsRight = [
+  {
+    q: "What is PPC and how can it benefit my business?",
+    a: "PPC (Pay-Per-Click) advertising lets you place ads on Google and other platforms, paying only when someone clicks. It's the fastest way to get your business in front of high-intent customers. Our PPC experts manage your budget efficiently to maximize ROI.",
+  },
+  {
+    q: "Do I need a website to start digital marketing?",
+    a: "A professional website is highly recommended as it serves as your digital headquarters. However, we can start with social media marketing and Google Business Profile optimization while building your website simultaneously. We also offer web design and development services.",
+  },
+  {
+    q: "How do you measure the success of a digital marketing campaign?",
+    a: "We track key performance indicators (KPIs) including website traffic, keyword rankings, conversion rates, cost per lead, social media engagement, and return on ad spend (ROAS). You'll receive regular detailed reports so you always know how your campaigns are performing.",
+  },
+  {
+    q: "Can you handle digital marketing for a small business or startup?",
+    a: "Yes! We work with businesses of all sizes — from individual entrepreneurs and startups to established brands. Our flexible packages are designed to deliver maximum impact even on a limited budget.",
+  },
+  {
+    q: "What industries do you serve?",
+    a: "We have experience across 20+ industries including retail, healthcare, real estate, education, hospitality, e-commerce, manufacturing, finance, and many more. Our strategies are always customized to your specific industry and target audience.",
+  },
+  {
+    q: "How do I get started with MarketingHubb?",
+    a: "Getting started is simple. Contact us via WhatsApp (+91 73072 60253) or fill out our contact form for a free strategy consultation. We'll analyze your current digital presence, understand your goals, and propose a customized plan — with no obligation.",
+  },
+];
+
+function FaqItem({
+  faq,
+  index,
+  colPrefix,
+  openIndex,
+  setOpenIndex,
+}: {
+  faq: { q: string; a: string };
+  index: number;
+  colPrefix: string;
+  openIndex: number | null;
+  setOpenIndex: (i: number | null) => void;
+}) {
+  const id = colPrefix === "left" ? index : index + 6;
+  const isOpen = openIndex === id;
+  return (
+    <div
+      className="rounded-xl border transition-all duration-200"
+      style={{
+        background: isOpen ? "rgba(67,184,154,0.06)" : "rgba(255,255,255,0.03)",
+        borderColor: isOpen
+          ? "rgba(67,184,154,0.45)"
+          : "rgba(255,255,255,0.08)",
+      }}
+      data-ocid={`services.faq.item.${id + 1}`}
+    >
+      <button
+        type="button"
+        className="w-full flex items-start justify-between gap-3 px-5 py-4 text-left focus:outline-none"
+        onClick={() => setOpenIndex(isOpen ? null : id)}
+        aria-expanded={isOpen}
+        data-ocid={`services.faq.toggle.${id + 1}`}
+      >
+        <span className="font-semibold text-white text-sm md:text-base leading-snug pr-2">
+          {faq.q}
+        </span>
+        <span
+          className="flex-shrink-0 mt-0.5 transition-transform duration-300"
+          style={{
+            color: "#43B89A",
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+        >
+          <ChevronDown size={20} />
+        </span>
+      </button>
+      <div
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: isOpen ? "300px" : "0px" }}
+      >
+        <p className="px-5 pb-5 text-gray-400 text-sm md:text-base leading-relaxed">
+          {faq.a}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function ServicesFaqAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Left column */}
+      <div className="flex flex-col gap-4">
+        {faqsLeft.map((faq, i) => (
+          <FaqItem
+            key={faq.q.slice(0, 20)}
+            faq={faq}
+            index={i}
+            colPrefix="left"
+            openIndex={openIndex}
+            setOpenIndex={setOpenIndex}
+          />
+        ))}
+      </div>
+      {/* Right column */}
+      <div className="flex flex-col gap-4">
+        {faqsRight.map((faq, i) => (
+          <FaqItem
+            key={faq.q.slice(0, 20)}
+            faq={faq}
+            index={i}
+            colPrefix="right"
+            openIndex={openIndex}
+            setOpenIndex={setOpenIndex}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function ServicesPage() {
   useSEO({
@@ -571,6 +718,39 @@ export function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ SECTION ===== */}
+      <section
+        className="py-20 px-4"
+        style={{ background: "#060f1e" }}
+        data-ocid="services.faq.section"
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <span
+              className="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
+              style={{
+                background: "rgba(67,184,154,0.12)",
+                color: "#43B89A",
+                border: "1px solid rgba(67,184,154,0.3)",
+              }}
+            >
+              FAQ
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              Frequently Asked{" "}
+              <span style={{ color: "#43B89A" }}>Questions</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Got questions about digital marketing? We&apos;ve got answers.
+            </p>
+          </div>
+
+          {/* Two-column FAQ grid */}
+          <ServicesFaqAccordion />
         </div>
       </section>
 
