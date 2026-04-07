@@ -14,12 +14,12 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/assets/chatgpt_image_mar_27_2026_09_54_33_am-019d6108-ca1d-752d-9b80-927f2099a261.png"
+                src="/assets/generated/logo-enhanced-transparent.dim_600x200.png"
                 alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 style={{
                   filter:
-                    "brightness(1.15) drop-shadow(0 0 10px rgba(67,184,154,0.5))",
+                    "brightness(1.2) contrast(1.1) drop-shadow(0 0 10px rgba(67,184,154,0.6))",
                 }}
               />
             </div>

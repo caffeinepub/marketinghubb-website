@@ -190,7 +190,7 @@ export function ServicesPage() {
             Home / Services
           </p>
           <h1
-            className="text-5xl lg:text-7xl font-black uppercase leading-tight"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase leading-tight"
             style={{ color: "#ffffff" }}
           >
             OUR <span style={{ color: "#43B89A" }}>SERVICES</span>
@@ -327,7 +327,7 @@ export function ServicesPage() {
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="group flex flex-col items-center justify-center gap-3 rounded-2xl p-5 cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col items-center justify-center gap-2 sm:gap-3 rounded-2xl p-3 sm:p-5 cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg min-w-0 overflow-hidden"
                 style={{
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(67,184,154,0.15)",
@@ -349,7 +349,7 @@ export function ServicesPage() {
                   {industry.emoji}
                 </span>
                 <span
-                  className="text-sm font-semibold text-center leading-tight"
+                  className="text-xs sm:text-sm font-semibold text-center leading-tight"
                   style={{ color: "#ffffff" }}
                 >
                   {industry.name}
@@ -433,7 +433,7 @@ export function ServicesPage() {
               ].map((city) => (
                 <div
                   key={city.name}
-                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  className="group flex items-center gap-2 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default min-w-0 overflow-hidden"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(67,184,154,0.15)",
@@ -454,7 +454,7 @@ export function ServicesPage() {
                   <span className="text-lg group-hover:scale-110 transition-transform duration-300">
                     {city.emoji}
                   </span>
-                  <span className="text-white text-xs font-semibold leading-tight">
+                  <span className="text-white text-xs font-semibold leading-tight truncate min-w-0">
                     {city.name}
                   </span>
                 </div>
@@ -489,7 +489,7 @@ export function ServicesPage() {
               ].map((state) => (
                 <div
                   key={state.name}
-                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  className="group flex items-center gap-2 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default min-w-0 overflow-hidden"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(67,184,154,0.15)",
@@ -510,7 +510,7 @@ export function ServicesPage() {
                   <span className="text-lg group-hover:scale-110 transition-transform duration-300">
                     {state.emoji}
                   </span>
-                  <span className="text-white text-xs font-semibold leading-tight">
+                  <span className="text-white text-xs font-semibold leading-tight truncate min-w-0">
                     {state.name}
                   </span>
                 </div>

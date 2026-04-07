@@ -29,16 +29,20 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center" data-ocid="nav.link">
+        <Link
+          to="/"
+          className="flex items-center shrink-0"
+          data-ocid="nav.link"
+        >
           <img
-            src="/assets/chatgpt_image_mar_27_2026_09_54_33_am-019d6108-ca1d-752d-9b80-927f2099a261.png"
+            src="/assets/generated/logo-enhanced-transparent.dim_600x200.png"
             alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
-            className="h-20 lg:h-24 w-auto object-contain"
+            className="h-10 sm:h-12 lg:h-16 w-auto object-contain"
             style={{
               filter:
-                "brightness(1.15) drop-shadow(0 0 10px rgba(67,184,154,0.5))",
+                "brightness(1.2) contrast(1.1) drop-shadow(0 0 12px rgba(67,184,154,0.7))",
             }}
           />
         </Link>
@@ -61,8 +65,8 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="hidden md:flex">
+        {/* CTA Buttons */}
+        <div className="hidden md:flex items-center gap-3">
           <Link
             to="/contact"
             className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen hover:bg-seagreen-light transition-all duration-300 hover:shadow-teal"
@@ -70,6 +74,15 @@ export function Navbar() {
           >
             Get A Free Quote
           </Link>
+          <a
+            href="https://wa.me/917307260253?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20MarketingHubb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-full text-sm font-semibold text-white border-2 border-seagreen hover:bg-seagreen hover:text-navy transition-all duration-300"
+            data-ocid="nav.book_now_button"
+          >
+            Book Now
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -86,7 +99,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-navy/98 backdrop-blur-md border-t border-white/10 px-4 pb-6 pt-4">
+        <div className="md:hidden bg-navy/98 backdrop-blur-md border-t border-white/10 px-4 pb-6 pt-4 transition-all duration-300 animate-fade-in-up">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
@@ -109,6 +122,16 @@ export function Navbar() {
             >
               Get A Free Quote
             </Link>
+            <a
+              href="https://wa.me/917307260253?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20MarketingHubb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 rounded-full text-sm font-semibold text-white border-2 border-seagreen text-center"
+              onClick={() => setMobileOpen(false)}
+              data-ocid="nav.book_now_button"
+            >
+              Book Now
+            </a>
           </div>
         </div>
       )}

@@ -117,7 +117,7 @@ export function ContactPage() {
           <p className="text-seagreen text-xs font-bold uppercase tracking-widest mb-4">
             Home / Contact
           </p>
-          <h1 className="text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
             CONTACT <span style={{ color: "#43B89A" }}>US</span>
           </h1>
           <p className="text-gray-300 mt-6 text-xl max-w-2xl mx-auto">
@@ -329,7 +329,7 @@ export function ContactPage() {
               </div>
 
               {/* Quick contact buttons */}
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="https://wa.me/917307260253"
                   target="_blank"

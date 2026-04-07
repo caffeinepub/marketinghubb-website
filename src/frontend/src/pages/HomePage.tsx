@@ -93,7 +93,7 @@ const whyCards = [
     icon: <Trophy size={28} className="text-seagreen" />,
     title: "Proven Results",
     description:
-      "100+ brands grown, 500+ campaigns delivered with measurable ROI. Our track record speaks louder than promises.",
+      "10+ brands grown, 85+ campaigns delivered with measurable ROI. Our track record speaks louder than promises.",
   },
   {
     icon: <MapPin size={28} className="text-seagreen" />,
@@ -457,7 +457,7 @@ export function HomePage() {
 
             {/* Right: Orb */}
             <div
-              className={`flex justify-center transition-all duration-700 ${
+              className={`hidden lg:flex justify-center transition-all duration-700 ${
                 heroVisible
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-8"
@@ -610,7 +610,7 @@ export function HomePage() {
                 with 2 years of hands-on experience in SEO, Social Media, and
                 Performance Marketing. He founded MarketingHubb in 2024 with a
                 vision to help Varanasi businesses grow online. Under his
-                leadership, the agency has delivered 500+ successful campaigns
+                leadership, the agency has delivered 85+ successful campaigns
                 for clients across Uttar Pradesh.
               </p>
 
@@ -657,9 +657,9 @@ export function HomePage() {
             {/* Stats */}
             <div className="scroll-reveal-left">
               <div className="grid grid-cols-2 gap-8">
-                <StatCard value={100} suffix="+" label="Happy Clients" />
+                <StatCard value={10} suffix="+" label="Happy Clients" />
                 <StatCard value={2} suffix="+" label="Years Experience" />
-                <StatCard value={500} suffix="+" label="Campaigns" />
+                <StatCard value={85} suffix="+" label="Campaigns" />
                 <StatCard value={98} suffix="%" label="Satisfaction Rate" />
               </div>
             </div>
@@ -805,9 +805,9 @@ export function HomePage() {
           {/* Stat callouts */}
           <div className="scroll-reveal grid grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
             {[
-              { val: "100+", label: "Brands Grown" },
+              { val: "10+", label: "Brands Grown" },
               { val: "2+", label: "Years of Expertise" },
-              { val: "500+", label: "Campaigns Delivered" },
+              { val: "85+", label: "Campaigns Delivered" },
               { val: "98%", label: "Client Satisfaction" },
             ].map((stat) => (
               <div
@@ -886,7 +886,7 @@ export function HomePage() {
                 Marketing, Web Design, and Email Marketing — each crafted with
                 precision, purpose, and a relentless focus on your business
                 outcomes. We don't chase vanity metrics. We chase growth. We've
-                helped 100+ businesses in Varanasi and across India transform
+                helped 10+ businesses in Varanasi and across India transform
                 from local shops into recognized, trusted brands with loyal
                 customer bases.
               </p>
@@ -1061,7 +1061,7 @@ export function HomePage() {
             ].map((industry) => (
               <div
                 key={industry.name}
-                className="group flex flex-col items-center justify-center gap-3 rounded-2xl p-5 cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col items-center justify-center gap-2 sm:gap-3 rounded-2xl p-3 sm:p-5 cursor-default transition-all duration-300 hover:-translate-y-1 hover:shadow-lg min-w-0 overflow-hidden"
                 style={{
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(67,184,154,0.15)",
@@ -1082,7 +1082,7 @@ export function HomePage() {
                 <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
                   {industry.emoji}
                 </span>
-                <span className="text-white text-sm font-semibold text-center leading-tight">
+                <span className="text-white text-xs sm:text-sm font-semibold text-center leading-tight">
                   {industry.name}
                 </span>
               </div>
@@ -1134,30 +1134,41 @@ export function HomePage() {
           </div>
 
           {/* Trust badges */}
-          <div className="scroll-reveal mt-14 flex flex-wrap justify-center gap-6">
+          <div className="scroll-reveal mt-14 flex flex-wrap justify-center gap-5">
             {[
               {
-                icon: <Users size={16} className="text-seagreen" />,
-                text: "100+ Happy Clients",
+                icon: <Users size={20} className="text-white" />,
+                text: "10+ Happy Clients",
+                bg: "#1A5C4A",
               },
               {
-                icon: <Star size={16} className="text-seagreen" />,
+                icon: <Star size={20} className="text-yellow-300" />,
                 text: "5-Star Rated Agency",
+                bg: "#0B3D6E",
               },
               {
-                icon: <ShieldCheck size={16} className="text-seagreen" />,
+                icon: <ShieldCheck size={20} className="text-white" />,
                 text: "Certified Experts",
+                bg: "#43B89A",
               },
               {
-                icon: <Globe size={16} className="text-seagreen" />,
+                icon: <Globe size={20} className="text-white" />,
                 text: "National Reach",
+                bg: "#071C35",
               },
             ].map((badge) => (
               <div
                 key={badge.text}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-seagreen/20 text-navy-dark text-sm font-semibold shadow-sm"
+                className="flex items-center gap-3 px-6 py-3 rounded-full text-white text-sm font-black uppercase tracking-wide shadow-lg border-2 border-white/20"
+                style={{ background: badge.bg, letterSpacing: "0.05em" }}
               >
-                {badge.icon} {badge.text}
+                {badge.icon}
+                <span
+                  className="text-white font-black"
+                  style={{ textShadow: "0 1px 3px rgba(0,0,0,0.4)" }}
+                >
+                  {badge.text}
+                </span>
               </div>
             ))}
           </div>
@@ -1237,7 +1248,7 @@ export function HomePage() {
               ].map((city) => (
                 <div
                   key={city.name}
-                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  className="group flex items-center gap-2 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default min-w-0 overflow-hidden"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(67,184,154,0.15)",
@@ -1258,7 +1269,7 @@ export function HomePage() {
                   <span className="text-lg group-hover:scale-110 transition-transform duration-300">
                     {city.emoji}
                   </span>
-                  <span className="text-white text-xs font-semibold leading-tight">
+                  <span className="text-white text-xs font-semibold leading-tight truncate min-w-0">
                     {city.name}
                   </span>
                 </div>
@@ -1293,7 +1304,7 @@ export function HomePage() {
               ].map((state) => (
                 <div
                   key={state.name}
-                  className="group flex items-center gap-2 rounded-xl px-3 py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                  className="group flex items-center gap-2 rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 transition-all duration-300 hover:-translate-y-0.5 cursor-default min-w-0 overflow-hidden"
                   style={{
                     background: "rgba(255,255,255,0.05)",
                     border: "1px solid rgba(67,184,154,0.15)",
@@ -1314,7 +1325,7 @@ export function HomePage() {
                   <span className="text-lg group-hover:scale-110 transition-transform duration-300">
                     {state.emoji}
                   </span>
-                  <span className="text-white text-xs font-semibold leading-tight">
+                  <span className="text-white text-xs font-semibold leading-tight truncate min-w-0">
                     {state.name}
                   </span>
                 </div>
@@ -1470,8 +1481,8 @@ export function HomePage() {
                     key={`row-${i}-${t.name}`}
                     className="shrink-0 rounded-2xl p-6"
                     style={{
-                      minWidth: "310px",
-                      maxWidth: "340px",
+                      minWidth: "270px",
+                      maxWidth: "310px",
                       background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(67,184,154,0.2)",
                       backdropFilter: "blur(8px)",
@@ -1617,8 +1628,8 @@ export function HomePage() {
                     key={`row-${i}-${t.name}`}
                     className="shrink-0 rounded-2xl p-6"
                     style={{
-                      minWidth: "310px",
-                      maxWidth: "340px",
+                      minWidth: "270px",
+                      maxWidth: "310px",
                       background: "rgba(255,255,255,0.05)",
                       border: "1px solid rgba(67,184,154,0.2)",
                       backdropFilter: "blur(8px)",
@@ -1840,7 +1851,7 @@ export function HomePage() {
               }}
             >
               <p className="text-navy font-semibold text-base italic leading-relaxed">
-                "We've helped 100+ businesses in Varanasi get found on Google,
+                "We've helped 10+ businesses in Varanasi get found on Google,
                 grow their social media presence, and convert online traffic
                 into actual paying customers. From local kirana stores to luxury
                 hotels, from coaching centres to hospitals — MarketingHubb has

@@ -119,7 +119,7 @@ export function FloatingLeadForm() {
                 <X size={16} />
               </button>
 
-              <div className="px-7 pt-6 pb-7">
+              <div className="px-5 sm:px-7 pt-5 pb-6 sm:pt-6 sm:pb-7">
                 {/* Badge */}
                 <div className="flex items-center gap-2 mb-4">
                   <span

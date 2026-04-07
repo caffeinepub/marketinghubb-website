@@ -125,7 +125,7 @@ export function SmmPage() {
             </Link>
             {" / Social Media Marketing"}
           </p>
-          <h1 className="text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
             SOCIAL MEDIA <span style={{ color: "#43B89A" }}>MARKETING</span>
           </h1>
           <p className="text-gray-300 mt-6 text-xl max-w-2xl mx-auto">

@@ -84,7 +84,7 @@ export function AboutPage() {
           <p className="text-seagreen text-xs font-bold uppercase tracking-widest mb-4">
             Home / About Us
           </p>
-          <h1 className="text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase text-white leading-tight">
             ABOUT <span style={{ color: "#43B89A" }}>US</span>
           </h1>
           <p className="text-gray-300 mt-6 text-xl max-w-2xl mx-auto">
@@ -198,8 +198,8 @@ export function AboutPage() {
             </h2>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatCard value={150} suffix="+" label="Happy Clients" />
-            <StatCard value={500} suffix="+" label="Campaigns Delivered" />
+            <StatCard value={10} suffix="+" label="Happy Clients" />
+            <StatCard value={85} suffix="+" label="Campaigns Delivered" />
             <StatCard value={2} suffix="+" label="Years Experience" />
             <StatCard value={98} suffix="%" label="Client Retention" />
           </div>
@@ -298,7 +298,7 @@ export function AboutPage() {
                 with 2 years of hands-on experience in SEO, Social Media, and
                 Performance Marketing. He founded MarketingHubb in 2024 with a
                 vision to help Varanasi businesses grow online. Under his
-                leadership, the agency has delivered 500+ successful campaigns
+                leadership, the agency has delivered 85+ successful campaigns
                 for clients across Uttar Pradesh.
               </p>
 
