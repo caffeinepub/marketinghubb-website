@@ -84,7 +84,10 @@
   }
 }
 
-/* Animations */
+/* ============================================================
+   EXISTING KEYFRAMES (preserved)
+   ============================================================ */
+
 @keyframes float {
   0%,
   100% {
@@ -219,6 +222,133 @@
   }
 }
 
+/* ============================================================
+   NEW KEYFRAMES
+   ============================================================ */
+
+/* Shimmer sweep for card borders */
+@keyframes shimmerSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Glow orb slow drift */
+@keyframes glowDrift1 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.97);
+  }
+}
+
+@keyframes glowDrift2 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  40% {
+    transform: translate(-50px, 30px) scale(1.08);
+  }
+  70% {
+    transform: translate(30px, -20px) scale(0.95);
+  }
+}
+
+@keyframes glowDrift3 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(25px, 40px) scale(1.04);
+  }
+}
+
+/* Divider gradient sweep */
+@keyframes dividerSweep {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* Button glow pulse */
+@keyframes btnGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0px rgba(67, 184, 154, 0), 0 4px 15px
+      rgba(67, 184, 154, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(67, 184, 154, 0.5), 0 4px 30px
+      rgba(67, 184, 154, 0.4);
+  }
+}
+
+/* Scroll progress bar shimmer */
+@keyframes progressShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Typewriter phrase fade-slide */
+@keyframes phraseFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes phraseFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Icon bounce on hover */
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  40% {
+    transform: scale(1.15) translateY(-4px);
+  }
+  70% {
+    transform: scale(1.05) translateY(-2px);
+  }
+}
+
+/* ============================================================
+   EXISTING ANIMATION CLASSES (preserved)
+   ============================================================ */
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -250,52 +380,193 @@
   animation: particleFloat linear infinite;
 }
 
+/* Scroll reveal — now also scales up */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(30px) scale(0.97);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scroll-reveal.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .scroll-reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateX(-40px) scale(0.97);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scroll-reveal-left.revealed {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
 
 .scroll-reveal-right {
   opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateX(40px) scale(0.97);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .scroll-reveal-right.revealed {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
 
+/* Service card */
 .service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s
+    ease;
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(67, 184, 154, 0.3);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 24px 64px rgba(67, 184, 154, 0.3);
+}
+
+/* Icon bounce on card hover */
+.service-card:hover .icon-bounce,
+.why-card:hover .icon-bounce {
+  animation: iconBounce 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .teal-glow {
-  box-shadow: 0 0 30px rgba(67, 184, 154, 0.2);
+  box-shadow: 0 0 30px rgba(67, 184, 154, 0.15);
 }
 
+/* ============================================================
+   NEW ANIMATION CLASSES
+   ============================================================ */
+
+/* Scroll progress bar */
+.scroll-progress-bar {
+  background: linear-gradient(
+    90deg,
+    #43b89a 0%,
+    #5dd6b8 40%,
+    #43b89a 60%,
+    #36967e 100%
+  );
+  background-size: 200% 100%;
+  animation: progressShimmer 2s linear infinite;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(67, 184, 154, 0.6);
+}
+
+/* Shimmer card — animated gradient border on hover */
+.shimmer-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.shimmer-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 20%,
+    rgba(67, 184, 154, 0.6) 40%,
+    rgba(93, 214, 184, 0.8) 50%,
+    rgba(67, 184, 154, 0.6) 60%,
+    transparent 80%
+  );
+  background-size: 200% 200%;
+  background-position: -200% center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shimmer-card:hover::before {
+  opacity: 1;
+  animation: shimmerSweep 0.8s ease-out forwards;
+}
+
+/* Button glow */
+.btn-glow {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-2px) scale(1.03);
+  animation: btnGlowPulse 1.5s ease-in-out infinite;
+}
+
+.btn-glow:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Section divider animated */
+.divider-animate {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #43b89a 30%,
+    #5dd6b8 50%,
+    #43b89a 70%,
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divider-animate.revealed {
+  transform: scaleX(1);
+}
+
+/* Glow orbs */
+.glow-orb-1 {
+  animation: glowDrift1 18s ease-in-out infinite;
+}
+
+.glow-orb-2 {
+  animation: glowDrift2 22s ease-in-out infinite;
+}
+
+.glow-orb-3 {
+  animation: glowDrift3 15s ease-in-out infinite;
+}
+
+/* Typewriter phrase */
+.phrase-in {
+  animation: phraseFadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.phrase-out {
+  animation: phraseFadeOut 0.3s ease-in forwards;
+}
+
+/* Navbar scroll glow border */
+.nav-scrolled-glow {
+  border-bottom: 1px solid rgba(67, 184, 154, 0.25);
+  box-shadow: 0 4px 24px rgba(7, 28, 53, 0.6), 0 1px 0 rgba(67, 184, 154, 0.2);
+}
+
+/* Why-card hover */
+.why-card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s
+    ease, border-color 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: rgba(67, 184, 154, 0.5) !important;
+  box-shadow: 0 16px 48px rgba(67, 184, 154, 0.2), 0 4px 16px
+    rgba(7, 28, 53, 0.4);
+}
+
+/* Nav link */
 .nav-link {
   position: relative;
   padding-bottom: 2px;
@@ -371,4 +642,41 @@
 .marquee-track:hover .animate-marquee-left,
 .marquee-track:hover .animate-marquee-right {
   animation-play-state: paused;
+}
+
+/* ============================================================
+   REDUCED MOTION — respect user preference
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal-left,
+  .scroll-reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .shimmer-card::before,
+  .glow-orb-1,
+  .glow-orb-2,
+  .glow-orb-3,
+  .animate-float,
+  .animate-orbit,
+  .animate-orbit2,
+  .animate-orbit3,
+  .animate-orbit4,
+  .animate-pulse-glow,
+  .animate-fade-in-up,
+  .animate-particle,
+  .scroll-progress-bar,
+  .btn-glow:hover,
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+
+  .divider-animate {
+    transform: scaleX(1);
+    transition: none;
+  }
 }

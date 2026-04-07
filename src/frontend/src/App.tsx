@@ -9,6 +9,7 @@ import { FloatingButtons } from "./components/FloatingButtons";
 import { FloatingLeadForm } from "./components/FloatingLeadForm";
 import { Footer } from "./components/Footer";
 import { Navbar } from "./components/Navbar";
+import { ScrollProgress } from "./components/ScrollProgress";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
 import { HomePage } from "./pages/HomePage";
@@ -26,6 +27,7 @@ const rootRoute = createRootRoute({
       className="min-h-screen flex flex-col"
       style={{ fontFamily: "'Poppins', sans-serif" }}
     >
+      <ScrollProgress />
       <Navbar />
       <main className="flex-1">
         <Outlet />

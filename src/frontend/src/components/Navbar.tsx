@@ -23,9 +23,9 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy/95 backdrop-blur-md shadow-lg shadow-black/30"
+          ? "bg-navy/95 backdrop-blur-md nav-scrolled-glow"
           : "bg-transparent"
       }`}
     >
@@ -39,7 +39,7 @@ export function Navbar() {
           <img
             src="/assets/generated/logo-enhanced-transparent.dim_600x200.png"
             alt="MarketingHubb - Best Digital Marketing Agency in Varanasi"
-            className="h-10 sm:h-12 lg:h-16 w-auto object-contain"
+            className="h-10 sm:h-12 lg:h-16 w-auto object-contain transition-all duration-300 hover:scale-105"
             style={{
               filter:
                 "brightness(1.2) contrast(1.1) drop-shadow(0 0 12px rgba(67,184,154,0.7))",
@@ -69,7 +69,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             to="/contact"
-            className="px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen hover:bg-seagreen-light transition-all duration-300 hover:shadow-teal"
+            className="btn-glow px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen transition-colors duration-300 hover:bg-[#5dd6b8]"
             data-ocid="nav.primary_button"
           >
             Get A Free Quote
@@ -99,7 +99,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-navy/98 backdrop-blur-md border-t border-white/10 px-4 pb-6 pt-4 transition-all duration-300 animate-fade-in-up">
+        <div className="md:hidden bg-navy/98 backdrop-blur-md border-t border-seagreen/20 px-4 pb-6 pt-4 transition-all duration-300 animate-fade-in-up">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
@@ -116,7 +116,7 @@ export function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="mt-2 px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen text-center"
+              className="mt-2 px-5 py-2.5 rounded-full text-sm font-semibold text-navy bg-seagreen text-center btn-glow"
               onClick={() => setMobileOpen(false)}
               data-ocid="nav.primary_button"
             >

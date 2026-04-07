@@ -341,6 +341,29 @@ export function HomePage() {
   const testimonialsRef = useScrollReveal();
   const [heroVisible, setHeroVisible] = useState(false);
 
+  const typePhrases = [
+    "SEO Experts",
+    "Social Media Marketing",
+    "PPC Advertising",
+    "Web Design",
+    "Content Marketing",
+    "Email Marketing",
+  ];
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [phraseVisible, setPhraseVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPhraseVisible(false);
+      setTimeout(() => {
+        setPhraseIndex((prev) => (prev + 1) % typePhrases.length);
+        setPhraseVisible(true);
+      }, 350);
+    }, 2800);
+    return () => clearInterval(interval);
+    // phrases array is constant, no deps needed
+  }, []);
+
   useEffect(() => {
     document.title =
       "MarketingHubb | Best Digital Marketing Agency in Varanasi";
@@ -429,6 +452,36 @@ export function HomePage() {
                 through data-driven strategies, creative campaigns, and
                 measurable results.
               </p>
+
+              {/* Typewriter rotating phrases */}
+              <div
+                className={`flex items-center gap-3 mb-8 transition-all duration-700 ${
+                  heroVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-8"
+                }`}
+                style={{ transitionDelay: "0.35s" }}
+              >
+                <span className="text-gray-400 text-sm font-medium">
+                  We specialize in
+                </span>
+                <span
+                  className={`text-sm font-bold px-3 py-1 rounded-full transition-all duration-300 ${
+                    phraseVisible ? "phrase-in" : "phrase-out"
+                  }`}
+                  style={{
+                    background: "rgba(67,184,154,0.15)",
+                    color: "#43b89a",
+                    border: "1px solid rgba(67,184,154,0.3)",
+                    display: "inline-block",
+                    minWidth: "160px",
+                    textAlign: "center",
+                  }}
+                >
+                  {typePhrases[phraseIndex]}
+                </span>
+              </div>
+
               <div
                 className={`flex flex-wrap gap-4 transition-all duration-700 ${
                   heroVisible
@@ -439,7 +492,7 @@ export function HomePage() {
               >
                 <Link
                   to="/contact"
-                  className="px-7 py-3.5 rounded-full font-bold text-navy text-sm uppercase tracking-wide transition-all hover:scale-105 hover:shadow-teal-lg"
+                  className="btn-glow px-7 py-3.5 rounded-full font-bold text-navy text-sm uppercase tracking-wide"
                   style={{ background: "#43B89A" }}
                   data-ocid="home.primary_button"
                 >
@@ -490,11 +543,11 @@ export function HomePage() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="scroll-reveal card-gradient rounded-2xl p-7 border border-seagreen/20 service-card teal-glow"
+                className="scroll-reveal shimmer-card card-gradient rounded-2xl p-7 border border-seagreen/20 service-card teal-glow"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                  className="icon-bounce w-14 h-14 rounded-xl flex items-center justify-center mb-4"
                   style={{ background: "rgba(67,184,154,0.1)" }}
                 >
                   {s.icon}
@@ -517,6 +570,11 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Section divider */}
+      <div className="px-8 sm:px-16 py-2 bg-[#F4FBFA]">
+        <div className="scroll-reveal divider-animate max-w-7xl mx-auto" />
+      </div>
 
       {/* Founder Section */}
       <section className="py-24 bg-[#F4FBFA] confetti-bg" ref={founderRef}>
@@ -646,12 +704,25 @@ export function HomePage() {
 
       {/* About Preview */}
       <section
-        className="py-24"
+        className="relative py-24 overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #071C35 0%, #0B2A4A 100%)",
         }}
         ref={aboutRef}
       >
+        {/* Animated glow orbs */}
+        <div
+          className="glow-orb-3 absolute top-1/3 right-0 w-96 h-96 rounded-full opacity-[0.06] blur-3xl pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #43B89A, transparent)",
+          }}
+        />
+        <div
+          className="glow-orb-1 absolute bottom-0 left-1/4 w-64 h-64 rounded-full opacity-[0.05] blur-3xl pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #5dd6b8, transparent)",
+          }}
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Stats */}
@@ -703,14 +774,20 @@ export function HomePage() {
         }}
         ref={coreContentRef}
       >
-        {/* Decorative blobs */}
+        {/* Animated glow orbs */}
         <div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-5 blur-3xl pointer-events-none"
-          style={{ background: "#43B89A" }}
+          className="glow-orb-1 absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.07] blur-3xl pointer-events-none"
+          style={{ background: "radial-gradient(circle, #43B89A, #0B2A4A)" }}
         />
         <div
-          className="absolute bottom-0 left-0 w-80 h-80 rounded-full opacity-5 blur-3xl pointer-events-none"
-          style={{ background: "#43B89A" }}
+          className="glow-orb-2 absolute bottom-0 left-0 w-[420px] h-[420px] rounded-full opacity-[0.07] blur-3xl pointer-events-none"
+          style={{ background: "radial-gradient(circle, #5dd6b8, #071C35)" }}
+        />
+        <div
+          className="glow-orb-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full opacity-[0.04] blur-3xl pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, #43B89A, transparent)",
+          }}
         />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -1091,6 +1168,11 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* Section divider */}
+      <div className="px-8 sm:px-16 py-2 bg-[#F0FAF8]">
+        <div className="scroll-reveal divider-animate max-w-7xl mx-auto" />
+      </div>
+
       {/* ===== WHY CHOOSE MARKETINGHUBB ===== */}
       <section className="py-28 bg-[#F0FAF8] confetti-bg" ref={whyRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1113,12 +1195,12 @@ export function HomePage() {
             {whyCards.map((card, i) => (
               <div
                 key={card.title}
-                className="scroll-reveal card-gradient rounded-2xl p-7 border border-seagreen/20 service-card teal-glow"
+                className="scroll-reveal shimmer-card why-card card-gradient rounded-2xl p-7 border border-seagreen/20 teal-glow"
                 style={{ transitionDelay: `${i * 0.1}s` }}
                 data-ocid={`why.card.${i + 1}`}
               >
                 <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                  className="icon-bounce w-14 h-14 rounded-xl flex items-center justify-center mb-4"
                   style={{ background: "rgba(67,184,154,0.1)" }}
                 >
                   {card.icon}
